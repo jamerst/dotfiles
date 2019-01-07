@@ -43,7 +43,7 @@ mklnk $wd/csscomb/csscomb.json $HOME/.csscomb.json
 # FIREFOX
 echo $'\nConfiguring Firefox UserChrome'
 profile="$(cd $HOME/.mozilla/firefox/*.default; pwd)" # find default profile directory
-mklnk $wd/firefox/chrome $profile/chrome
+mklnk $wd/firefox/chrome/ $profile/
 
 # KITTY
 echo $'\nConfiguring kitty'
@@ -51,17 +51,16 @@ mklnk $wd/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
 
 # NEMO
 echo $'\nConfiguring nemo'
-mklnk $wd/nemo/local $HOME/.local/share/nemo
-mklnk $wd/nemo/Templates $HOME/Templates
+mklnk $wd/nemo/nemo $HOME/.local/share/
+mklnk $wd/nemo/Templates $HOME/
 
 # ZSH
 echo $'\nConfiguring ZSH'
 tar -xf zsh/oh-my-zsh.tar.gz -C zsh
 if [ $? -eq 0 ]; then
     echo "ZSH archive successfully extracted"
-    mklnk $wd/zsh/oh-my-zsh $HOME/.oh-my-zsh
+    mklnk $wd/zsh/oh-my-zsh $HOME/
     mklnk $wd/zsh/oh-my-zsh/zshrc $HOME/.zshrc
-    mklnk $wd/zsh/z $HOME/.z
 else
     echo "Failed to extract ZSH archive"
 fi
