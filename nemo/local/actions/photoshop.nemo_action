@@ -1,0 +1,7 @@
+[Nemo Action]
+Name=Edit with Adobe Photoshop
+Comment=Edit with Adobe Photoshop
+Quote=double
+Exec=/usr/share/playonlinux/playonlinux --run "Adobe Photoshop CS6" %F
+Selection = notnone
+Mimetypes=image/*;
