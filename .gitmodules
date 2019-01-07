@@ -1,6 +1,0 @@
-[submodule "conky/conky-modern"]
-	path = conky/conky-modern
-	url = git@github.com:jamerst/conky-modern.git
-[submodule "zsh/oh-my-zsh"]
-	path = zsh/oh-my-zsh
-	url = git@github.com:robbyrussell/oh-my-zsh.git
