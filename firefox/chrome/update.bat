@@ -1,1 +1,0 @@
-shadowfox_updater.exe -profile-index 0

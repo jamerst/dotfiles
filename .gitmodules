@@ -1,0 +1,3 @@
+[submodule "firefox/chrome"]
+	path = firefox/chrome
+	url = git@github.com:jamerst/firefox-userchrome.git
