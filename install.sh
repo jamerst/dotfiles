@@ -1,6 +1,12 @@
 #!/bin/bash
 
 function mklnk {
+    linkName=$2
+    # if destination is a folder, set link name to be displayed
+    if [ -d $1 ]; then
+        linkName="$2$(basename $1)"
+    fi
+
     # if the file already exists but isn't a symlink, rename to backup
     if [ -f $2 ] && (! [ -h $2 ]); then
         echo "File already exists, renaming"
@@ -8,12 +14,18 @@ function mklnk {
         mv $2 "$2_old-$dateString"
     fi
 
+    if [ -d "$2$(basename $1)" ] && (! [ -h "$2$(basename $1)" ]); then
+        echo "Folder already exists, renaming"
+        dateString=$(date +%s)
+        mv "$2$(basename $1)" "$2$(basename $1)_old-$dateString"
+    fi
+
     ln -sf $1 $2
 
     if [ $? -eq 0 ]; then
-        echo "Link created: $2 -> $1"
+        echo "Link created: $linkName -> $1"
     else
-        echo "Failed to create link: $2 -> $1"
+        echo "Failed to create link: $linkName -> $1"
     fi
 }
 
@@ -32,6 +44,7 @@ tar -xf conky/conky-modern.tar.gz -C conky
 if [ $? -eq 0 ]; then
     echo "Conky archive successfully extracted"
     mklnk $wd/conky/conky-modern/conky-modern.conky $HOME/.conkyrc
+    mklnk $wd/conky/conky-modern $HOME/.conky/
 else
     echo "Failed to extract conky archive"
 fi
@@ -54,6 +67,10 @@ echo $'\nConfiguring nemo'
 mklnk $wd/nemo/nemo $HOME/.local/share/
 mklnk $wd/nemo/Templates $HOME/
 
+# XSESSION
+echo $'\nConfiguring xsession'
+mklnk $wd/xsession/xsessionrc $HOME/.xsessionrc
+
 # ZSH
 echo $'\nConfiguring ZSH'
 tar -xf zsh/oh-my-zsh.tar.gz -C zsh
@@ -63,7 +80,7 @@ if [ $? -eq 0 ]; then
     mklnk $wd/zsh/oh-my-zsh/zshrc $HOME/.zshrc
 
     # set oh-my-zsh install folder variable in zshrc directly to folder - don't need to symlink
-    sed -i "s|  export ZSH=.*|  export ZSH=$wd/zsh/oh-my-zsh|" $HOME/.zshrc
+    sed -i "s|  export ZSH=.*|  export ZSH=$wd/zsh/oh-my-zsh|" $wd/zsh/oh-my-zsh/zshrc
 
     if [ $? -eq 0 ]; then
         echo "oh-my-zsh install path variable successfully set"
