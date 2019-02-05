@@ -76,8 +76,8 @@ echo $'\nConfiguring ZSH'
 tar -xf zsh/oh-my-zsh.tar.gz -C zsh
 if [ $? -eq 0 ]; then
     echo "ZSH archive successfully extracted"
-    # mklnk $wd/zsh/.oh-my-zsh $HOME/
-    mklnk $wd/zsh/oh-my-zsh/zshrc $HOME/.zshrc
+
+    mklnk $wd/zsh/zshrc $HOME/.zshrc
 
     # set oh-my-zsh install folder variable in zshrc directly to folder - don't need to symlink
     sed -i "s|  export ZSH=.*|  export ZSH=$wd/zsh/oh-my-zsh|" $wd/zsh/oh-my-zsh/zshrc
