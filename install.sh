@@ -73,20 +73,13 @@ mklnk $wd/xsession/xsessionrc $HOME/.xsessionrc
 
 # ZSH
 echo $'\nConfiguring ZSH'
-tar -xf zsh/oh-my-zsh.tar.gz -C zsh
+mklnk $wd/zsh/zshrc $HOME/.zshrc
+
+# set directory for scripts directly to path - no need for symlink
+sed -i "s|dotfilesZsh=.*|dotfilesZsh=$wd/zsh|" $wd/zsh/zshrc
+
 if [ $? -eq 0 ]; then
-    echo "ZSH archive successfully extracted"
-
-    mklnk $wd/zsh/zshrc $HOME/.zshrc
-
-    # set oh-my-zsh install folder variable in zshrc directly to folder - don't need to symlink
-    sed -i "s|  export ZSH=.*|  export ZSH=$wd/zsh/oh-my-zsh|" $wd/zsh/oh-my-zsh/zshrc
-
-    if [ $? -eq 0 ]; then
-        echo "oh-my-zsh install path variable successfully set"
-    else
-        echo "Failed to set oh-my-zsh install path variable"
-    fi
+    echo "ZSH path variable successfully set"
 else
-    echo "Failed to extract ZSH archive"
+    echo "Failed to set ZSH path variable"
 fi
