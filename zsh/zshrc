@@ -9,6 +9,9 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
 SAVEHIST=$HISTSIZE
 
+# enable auto-cd
+setopt autocd
+
 # theme customisation
 SPACESHIP_PROMPT_ADD_NEWLINE="false" # disable newline before prompt
 
