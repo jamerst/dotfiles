@@ -62,6 +62,11 @@ mklnk $wd/firefox/chrome/ $profile/
 echo $'\nConfiguring kitty'
 mklnk $wd/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
 
+# LATEX
+echo $'\nConfiguring LaTeX'
+mklnk $wd/latex $HOME/texmf/tex/
+texhash
+
 # NEMO
 echo $'\nConfiguring nemo'
 mklnk $wd/nemo/nemo $HOME/.local/share/

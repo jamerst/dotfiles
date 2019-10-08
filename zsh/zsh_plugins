@@ -5,6 +5,7 @@ denysdovhan/spaceship-prompt
 
 # OH-MY-ZSH PLUGINS
 robbyrussell/oh-my-zsh path:plugins/colored-man-pages
+robbyrussell/oh-my-zsh path:lib/git.zsh
 robbyrussell/oh-my-zsh path:plugins/git
 robbyrussell/oh-my-zsh path:plugins/z
 # use terminal title from oh-my-zsh

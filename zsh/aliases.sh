@@ -40,8 +40,8 @@ function lc() { cd "$1" && l }
 alias ncdu='ncdu --color dark'
 
 # SSH
-alias sshj='ssh u1708480@joshua.dcs.warwick.ac.uk'
-function scpj() { scp u1708480@joshua.dcs.warwick.ac.uk $@ }
+alias sshw='ssh u1708480@login-3.dcs.warwick.ac.uk'
+function scpw() { scp u1708480@login-3.dcs.warwick.ac.uk $@ }
 alias sshr='ssh jtattersall@radio.warwick.ac.uk'
 
 # WARWICK
