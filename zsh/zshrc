@@ -1,5 +1,9 @@
+# fix compdef errors
+autoload -Uz compinit
+compinit -i
+
 # dotfiles zsh directory, to be set by install script
-dotfilesZsh=/home/jtattersall/src/dotfiles/zsh
+dotfilesZsh=/home/james/src/dotfiles/zsh
 
 source $dotfilesZsh/zsh_plugins.sh
 source $dotfilesZsh/aliases.sh
