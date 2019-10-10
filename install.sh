@@ -72,6 +72,15 @@ echo $'\nConfiguring nemo'
 mklnk $wd/nemo/nemo $HOME/.local/share/
 mklnk $wd/nemo/Templates $HOME/
 
+# REDSHIFT
+echo $'\nConfiguring redshift'
+mklnk $wd/redshift/redshift.conf $HOME/.config/redshift.conf
+mklnk $wd/redshift/hooks $HOME/.config/redshift/
+
+# ULAUNCHER
+echo $'\nConfiguring Ulauncher'
+mklnk $wd/ulauncher $HOME/.config/
+
 # XSESSION
 echo $'\nConfiguring xsession'
 mklnk $wd/xsession/xsessionrc $HOME/.xsessionrc

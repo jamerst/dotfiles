@@ -1,0 +1,37 @@
+{
+    "com.github.ulauncher.ulauncher-kill": {
+        "url": "https://github.com/Ulauncher/ulauncher-kill", 
+        "last_commit_time": "2019-05-21T16:14:35Z", 
+        "id": "com.github.ulauncher.ulauncher-kill", 
+        "updated_at": "2019-10-10T19:26:57.742277", 
+        "last_commit": "d296e6c84b4c1e28bfc8fbb41f7f7bdf0240a76e"
+    }, 
+    "com.github.james-dumas.ulauncher-run": {
+        "url": "https://github.com/James-Dumas/ulauncher-run", 
+        "last_commit_time": "2018-01-29T22:30:49Z", 
+        "id": "com.github.james-dumas.ulauncher-run", 
+        "updated_at": "2018-02-01T14:48:22.226755", 
+        "last_commit": "ea4b83705cbc90eb2546992170f56bdd9aa8dff2"
+    }, 
+    "com.github.manulaiko.ulauncher-openinbrowser": {
+        "url": "https://github.com/manulaiko/ulauncher-openInBrowser", 
+        "last_commit_time": "2019-09-25T14:03:50Z", 
+        "id": "com.github.manulaiko.ulauncher-openinbrowser", 
+        "updated_at": "2019-10-10T19:26:28.313280", 
+        "last_commit": "2536813431253f4711a950b50669d1bb6f842de4"
+    }, 
+    "com.github.robertokl.ulauncher-unit-converter": {
+        "url": "https://github.com/robertokl/ulauncher-unit-converter", 
+        "last_commit_time": "2017-12-01T20:24:11Z", 
+        "id": "com.github.robertokl.ulauncher-unit-converter", 
+        "updated_at": "2018-02-01T14:48:55.424216", 
+        "last_commit": "d9b230473a3de786b3aa5cab41df0452767c3792"
+    }, 
+    "com.github.rolfkoenders.ulauncher-myip": {
+        "url": "https://github.com/RolfKoenders/ulauncher-myip", 
+        "last_commit_time": "2017-12-06T23:01:27Z", 
+        "id": "com.github.rolfkoenders.ulauncher-myip", 
+        "updated_at": "2018-02-01T14:48:44.891623", 
+        "last_commit": "f40929056c53d7bd866e3825b9b98b4955f82121"
+    }
+}
