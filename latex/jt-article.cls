@@ -25,9 +25,19 @@
 \RequirePackage[parfill]{parskip} % use line breaks instead of indents for paragraphs
 \widowpenalties 1 10000 % prevent breaking paragraph over page
 
-\RequirePackage{titling}
-\renewcommand\maketitlehooka{\null\mbox{}\vfill}
-\renewcommand\maketitlehookd{\vfill\null}
+\renewcommand*{\maketitle}{
+    \begin{centering}
+        \LARGE{\textbf{\@title}}\par
+        \vspace{.1cm}
+        \large{\@author}\par
+    \end{centering}
+}
+
+\newcommand*{\maketitlepage}{
+    \thispagestyle{empty}\null\mbox{}\vfill
+    \maketitle
+    \vfill\null\newpage\thispagestyle{plain}\setcounter{page}{1}
+}
 
 \RequirePackage[nobottomtitles*]{titlesec}
 % set spacing after section headings
@@ -38,3 +48,4 @@
 
 \RequirePackage{tabularx}
 \renewcommand{\arraystretch}{1.5} % add padding to tables
+\newcommand{\thline}[0]{\noalign{\hrule height 1pt}} % add command for thick hline

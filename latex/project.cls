@@ -19,5 +19,3 @@
     \large{Supervised by \@supervisor}\par
 \end{centering}
 }
-
-\newcommand{\thline}[0]{\noalign{\hrule height 1pt}} % add command for thick hline
