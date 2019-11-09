@@ -6,6 +6,8 @@
 \geometry{a4paper, margin=2cm}
 
 \RequirePackage[ddmmyyyy]{datetime}
+\RequirePackage[british]{babel}
+\RequirePackage{csquotes}
 \RequirePackage[bottom]{footmisc} % force footnotes to bottom
 
 \RequirePackage{wrapfig}
