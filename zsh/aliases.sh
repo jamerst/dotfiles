@@ -16,6 +16,10 @@ alias path='echo -e ${PATH//:/\\n}'
 # Enable aliases to be sudo'ed
 alias sudo='sudo '
 
+# DOCKER
+alias dcup='docker-compose up'
+alias dcb='docker-compose build'
+
 # FZF
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(subl {})+abort'"

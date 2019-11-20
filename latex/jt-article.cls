@@ -51,3 +51,19 @@
 \RequirePackage{tabularx}
 \renewcommand{\arraystretch}{1.5} % add padding to tables
 \newcommand{\thline}[0]{\noalign{\hrule height 1pt}} % add command for thick hline
+
+\RequirePackage{color}
+% add command for listing todos - also shows warning if still in file
+\newcommand{\todo}[1]{\textcolor{red}{[ToDo: #1]}\PackageWarning{TODO}{ToDo: #1}}
+
+\usepackage{calc}
+\usepackage{float}
+
+% change default monospace font, and listings style
+\usepackage[scaled]{beramono}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\lstset{basicstyle=\small\ttfamily,breaklines=true,aboveskip=0pt,belowskip=0pt}
+
+\usepackage{graphicx}
+\graphicspath{{./img/}}

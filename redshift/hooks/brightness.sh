@@ -9,7 +9,7 @@
 
 # brightness values for each period (transition is brightness inbetween, not transition time)
 night=0
-transition=15
+transition=10
 daytime=50
 
 
