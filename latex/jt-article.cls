@@ -13,7 +13,7 @@
 \RequirePackage{wrapfig}
 \setlength{\columnsep}{0.1cm} % set gap between figure and text
 
-\RequirePackage[skip=0pt, font={footnotesize,bf}]{caption} % remove gap between figure and caption, make font small and bold
+\RequirePackage[skip=0.25cm,font={small,bf},belowskip=-0.25cm]{caption} % remove gap between figure and caption, make font small and bold
 \RequirePackage{subcaption}
 \captionsetup[sub]{font={scriptsize,bf}}
 
