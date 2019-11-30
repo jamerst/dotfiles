@@ -72,6 +72,10 @@ echo $'\nConfiguring nemo'
 mklnk $wd/nemo/nemo $HOME/.local/share/
 mklnk $wd/nemo/Templates $HOME/
 
+# OMNISHARP
+echo $'\nConfiguring OmniSharp'
+mklnk $wd/omnisharp/omnisharp.json $HOME/.omnisharp/omnisharp.json
+
 # REDSHIFT
 echo $'\nConfiguring redshift'
 mklnk $wd/redshift/redshift.conf $HOME/.config/redshift.conf
