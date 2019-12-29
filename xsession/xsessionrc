@@ -2,5 +2,3 @@
 xinput --set-prop 12 277 2
 xinput --set-prop 12 278 2
 xinput --set-prop 12 279 15
-
-export QT_QPA_PLATFORMTHEME=gtk2

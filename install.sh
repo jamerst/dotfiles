@@ -55,7 +55,7 @@ mklnk $wd/csscomb/csscomb.json $HOME/.csscomb.json
 
 # FIREFOX
 echo $'\nConfiguring Firefox UserChrome'
-profile="$(cd $HOME/.mozilla/firefox/*.default; pwd)" # find default profile directory
+profile="$(cd $HOME/.mozilla/firefox/*.default*; pwd)" # find default profile directory
 mklnk $wd/firefox/chrome/ $profile/
 
 # KITTY

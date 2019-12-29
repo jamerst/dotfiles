@@ -8,9 +8,9 @@
 # See HOOKS section under man page of redshift for more information about redshift hooks
 
 # path to wallpaper for each time
-daytime='/home/jtattersall/Pictures/backgrounds/lis ep2 menu.png'
-transition='/home/jtattersall/Pictures/backgrounds/lis ep4 menu.png'
-night='/home/jtattersall/Pictures/backgrounds/lis ep3 menu.png'
+daytime='/home/james/Pictures/backgrounds/lis ep2 menu.png'
+transition='/home/james/Pictures/backgrounds/lis ep4 menu.png'
+night='/home/james/Pictures/backgrounds/lis ep3 menu.png'
 
 
 deref() {

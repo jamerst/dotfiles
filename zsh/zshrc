@@ -20,7 +20,7 @@ setopt autocd
 SPACESHIP_PROMPT_ADD_NEWLINE="false" # disable newline before prompt
 
 # set up fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
 
 # add warning before using rm
 unsetopt RM_STAR_SILENT

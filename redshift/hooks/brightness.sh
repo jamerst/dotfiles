@@ -9,7 +9,7 @@
 
 # brightness values for each period (transition is brightness inbetween, not transition time)
 night=0
-transition=10
+transition=5
 daytime=50
 
 
@@ -26,12 +26,17 @@ fade_to() {
     # step brightness down 1 level at a time
     ddcutil set 10 $i -d 1
     ddcutil set 10 $i -d 2
-    sleep 1
+    sleep $2
   done
 }
 
 
+# if hook is for period changing
 if [ "$1" = "period-changed" ]; then
-  # if hook is for period changing
-  fade_to "$(deref "$3")"
+  # if changing at startup, i.e. not fading between states
+  if [ "$2" = "none" ]; then
+    fade_to "$(deref "$3")" 0.5
+  else
+    fade_to "$(deref "$3")" 60
+  fi
 fi
