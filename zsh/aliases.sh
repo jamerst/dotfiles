@@ -12,6 +12,8 @@ alias ch755='chmod 755'
 
 alias path='echo -e ${PATH//:/\\n}'
 
+function fixfilenames() { find $1 -iname "*[<>:/\\|?*]*" -exec prename -v 's/[<>:\\\\|?*]//' {} \; }
+
 # FIXES
 # Enable aliases to be sudo'ed
 alias sudo='sudo '
