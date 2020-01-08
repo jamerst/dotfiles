@@ -24,3 +24,11 @@ SPACESHIP_PROMPT_ADD_NEWLINE="false" # disable newline before prompt
 
 # add warning before using rm
 unsetopt RM_STAR_SILENT
+
+# fix delete key
+bindkey "^[[3~" delete-char
+
+# fix home and end
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+
