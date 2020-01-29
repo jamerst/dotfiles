@@ -13,7 +13,7 @@
 \RequirePackage{wrapfig}
 \setlength{\columnsep}{0.1cm} % set gap between figure and text
 
-\RequirePackage[skip=0.25cm,font={small,bf},belowskip=-0.25cm]{caption} % remove gap between figure and caption, make font small and bold
+\RequirePackage[skip=0cm,font={small,bf},belowskip=-0.25cm]{caption} % remove gap between figure and caption, make font small and bold
 \RequirePackage{subcaption}
 \captionsetup[sub]{font={scriptsize,bf}}
 
@@ -43,9 +43,9 @@
 
 \RequirePackage[nobottomtitles*]{titlesec}
 % set spacing after section headings
-\titlespacing{\section}{0pt}{\parskip}{-\parskip}
-\titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
-\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\titlespacing{\subsection}{0pt}{0pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{0pt}{0pt}
 \renewcommand{\bottomtitlespace}{0pt}
 
 \RequirePackage{tabularx}
