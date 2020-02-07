@@ -13,9 +13,9 @@
 \RequirePackage{wrapfig}
 \setlength{\columnsep}{0.1cm} % set gap between figure and text
 
-\RequirePackage[skip=0cm,font={small,bf},belowskip=-0.25cm]{caption} % remove gap between figure and caption, make font small and bold
+\RequirePackage[skip=0cm,font={small,bf}]{caption} % remove gap between figure and caption, make font small and bold
 \RequirePackage{subcaption}
-\captionsetup[sub]{font={scriptsize,bf}}
+\captionsetup[sub]{font={footnotesize,bf}}
 
 \RequirePackage{enumitem}
 \setlist[itemize]{leftmargin=*,nosep}
@@ -43,9 +43,9 @@
 
 \RequirePackage[nobottomtitles*]{titlesec}
 % set spacing after section headings
-\titlespacing{\section}{0pt}{0pt}{0pt}
-\titlespacing{\subsection}{0pt}{0pt}{0pt}
-\titlespacing{\subsubsection}{0pt}{0pt}{0pt}
+\titlespacing{\section}{0pt}{.25cm}{0pt}
+\titlespacing{\subsection}{0pt}{.1cm}{0pt}
+\titlespacing{\subsubsection}{0pt}{.05cm}{0pt}
 \renewcommand{\bottomtitlespace}{0pt}
 
 \RequirePackage{tabularx}
@@ -67,3 +67,5 @@
 
 \usepackage{graphicx}
 \graphicspath{{./img/}}
+
+\newcommand{\boldm}[1] {\mathversion{bold}#1\mathversion{normal}}
