@@ -13,7 +13,7 @@
 \RequirePackage{wrapfig}
 \setlength{\columnsep}{0.1cm} % set gap between figure and text
 
-\RequirePackage[skip=0cm,font={small,bf}]{caption} % remove gap between figure and caption, make font small and bold
+\RequirePackage[skip=0.25cm,font={small,bf}]{caption} % remove gap between figure and caption, make font small and bold
 \RequirePackage{subcaption}
 \captionsetup[sub]{font={footnotesize,bf}}
 
@@ -69,3 +69,6 @@
 \graphicspath{{./img/}}
 
 \newcommand{\boldm}[1] {\mathversion{bold}#1\mathversion{normal}}
+
+\usepackage[backend=biber, style=authoryear]{biblatex}
+\addbibresource{bibliography.bib}

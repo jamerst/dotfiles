@@ -2,9 +2,6 @@
 \ProvidesClass{project}[02/10/2019 LaTeX Class for Project Documents]
 \LoadClass{jt-article}
 
-\usepackage[backend=biber, style=authoryear]{biblatex}
-\addbibresource{bibliography.bib}
-
 \newcommand*{\project}[1]{\gdef\@project{#1}}
 \newcommand*{\@project}{Project Title}
 \newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}
