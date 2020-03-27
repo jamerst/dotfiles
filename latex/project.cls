@@ -1,5 +1,9 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{project}[02/10/2019 LaTeX Class for Project Documents]
+
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{jt-article}}
+\ProcessOptions\relax
+
 \LoadClass{jt-article}
 
 \newcommand*{\project}[1]{\gdef\@project{#1}}

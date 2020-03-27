@@ -1,10 +1,10 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{jt-article}[02/10/2019 Personal LaTeX Class]
+\ProvidesClass{dissertation}[27/03/2020 Dissertation LaTeX Class]
 
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions\relax
 
-\LoadClass{article}
+\LoadClass{report}
 
 \RequirePackage{geometry}
 \geometry{a4paper, margin=2cm}
@@ -33,9 +33,16 @@
 
 \renewcommand*{\maketitle}{
     \begin{centering}
-        \LARGE{\textbf{\@title}}\par
-        \vspace{.1cm}
-        \large{\@author}\par
+        \Huge{\textbf{\@project}}\par
+        \vspace{1cm}
+        \includegraphics[width=5cm]{\@crest}\par
+        \vspace{1cm}
+        \huge{\textbf{\@author}}\par
+        \large\textit{\@course\\\@university}\par
+        \vspace{1cm}
+        \Large{Supervised by \@supervisor}\par
+        \vspace{4cm}
+        \Large{\@date}\par
     \end{centering}
 }
 
@@ -52,6 +59,26 @@
 \titlespacing{\subsubsection}{0pt}{.25cm}{.1cm}
 \renewcommand{\bottomtitlespace}{0pt}
 
+\titleformat{\chapter}[display]
+    {\large\centering}
+    {\sffamily\MakeUppercase{\chaptertitlename} \thechapter}
+    {-.75cm}
+    {
+        \rule{.5\textwidth}{.5pt}
+        \bfseries\huge\\
+    }
+
+\titleformat{name=\chapter,numberless}[display]
+    {\large\centering}
+    {}
+    {0pt}
+    {
+        \bfseries\huge
+    }
+    [
+        \vspace{-.5cm}\rule{.5\textwidth}{.5pt}
+    ]
+
 \RequirePackage{tabularx}
 \renewcommand{\arraystretch}{1.5} % add padding to tables
 \newcommand{\thline}[0]{\noalign{\hrule height 1pt}} % add command for thick hline
@@ -62,6 +89,10 @@
 
 \RequirePackage{calc}
 \RequirePackage{float}
+\RequirePackage[section]{placeins} % prevent figures from being placed outside of section
+
+\RequirePackage{libertine}
+\RequirePackage{libertinust1math}
 
 % change default monospace font, and listings style
 \RequirePackage[scaled]{beramono}
@@ -77,3 +108,14 @@
 \RequirePackage[backend=biber, style=authoryear]{biblatex}
 \addbibresource{bibliography.bib}
 \setlength\bibitemsep{.5\baselineskip}
+
+\newcommand*{\project}[1]{\gdef\@project{#1}}
+\newcommand*{\@project}{Project Title}
+\newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}
+\newcommand*{\@supervisor}{Supervisor Name}
+\newcommand*{\crest}[1]{\gdef\@crest{#1}}
+\newcommand*{\@crest}{}
+\newcommand*{\course}[1]{\gdef\@course{#1}}
+\newcommand*{\@course}{Course Title}
+\newcommand*{\university}[1]{\gdef\@university{#1}}
+\newcommand*{\@university}{University Name}
