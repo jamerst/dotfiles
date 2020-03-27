@@ -35,7 +35,7 @@ fade_to() {
 if [ "$1" = "period-changed" ]; then
   # if changing at startup, i.e. not fading between states
   if [ "$2" = "none" ]; then
-    fade_to "$(deref "$3")" 0.5
+    fade_to "$(deref "$3")" 0.1
   else
     fade_to "$(deref "$3")" 60
   fi
