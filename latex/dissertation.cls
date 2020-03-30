@@ -35,7 +35,7 @@
     \begin{centering}
         \Huge{\textbf{\@project}}\par
         \vspace{1cm}
-        \includegraphics[width=5cm]{\@crest}\par
+        \includegraphics[width=4cm]{\@crest}\par
         \vspace{1cm}
         \huge{\textbf{\@author}}\par
         \large\textit{\@course\\\@university}\par
@@ -107,7 +107,27 @@
 
 \RequirePackage[backend=biber, style=authoryear]{biblatex}
 \addbibresource{bibliography.bib}
-\setlength\bibitemsep{.5\baselineskip}
+\setlength\bibitemsep{.5\baselineskip} % add spacing between items
+% fix long urls not breaking line
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+
+\RequirePackage{pdflscape}
+
+\RequirePackage[toc,page]{appendix}
+% make appendices appear under a single heading as if they were sections
+\AtBeginDocument{\let\report@l@chapter\l@chapter}
+\AtBeginDocument{\let\report@l@section\l@section}
+\let\origapp=\appendices
+\let\origendapp=\endappendices
+\def\appendices{% run original start command, then change TOC level
+    \origapp%
+    \addtocontents{toc}{\let\protect\l@chapter\protect\l@section\let\protect\l@section\protect\l@subsection}%
+}
+\def\endappendices{% reset, then finish appendix
+    \addtocontents{toc}{\let\protect\l@chapter\protect\report@l@chapter\let\protect\l@section\protect\report@l@section}%
+    \origendapp%
+}
 
 \newcommand*{\project}[1]{\gdef\@project{#1}}
 \newcommand*{\@project}{Project Title}
