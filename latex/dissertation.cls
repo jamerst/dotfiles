@@ -114,7 +114,7 @@
 
 \RequirePackage{pdflscape}
 
-\RequirePackage[toc,page]{appendix}
+\RequirePackage[toc]{appendix}
 % make appendices appear under a single heading as if they were sections
 \AtBeginDocument{\let\report@l@chapter\l@chapter}
 \AtBeginDocument{\let\report@l@section\l@section}
