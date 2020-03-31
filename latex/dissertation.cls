@@ -105,7 +105,7 @@
 
 \newcommand{\boldm}[1] {\mathversion{bold}#1\mathversion{normal}}
 
-\RequirePackage[backend=biber, style=authoryear]{biblatex}
+\RequirePackage[backend=biber]{biblatex}
 \addbibresource{bibliography.bib}
 \setlength\bibitemsep{.5\baselineskip} % add spacing between items
 % fix long urls not breaking line
