@@ -41,7 +41,15 @@
         \large\textit{\@course\\\@university}\par
         \vspace{1cm}
         \Large{Supervised by \@supervisor}\par
-        \vspace{4cm}
+        \vspace{1.5cm}
+        \parbox{12.5cm}{
+            \centering\normalsize
+            \begin{abstract}
+                \@abstract
+            \end{abstract}\par
+            \vspace{.5cm}
+            \textbf{Keywords:} \@keywords
+        }\par\vspace{1cm}
         \Large{\@date}\par
     \end{centering}
 }
@@ -133,9 +141,15 @@
 \newcommand*{\@project}{Project Title}
 \newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}
 \newcommand*{\@supervisor}{Supervisor Name}
+
 \newcommand*{\crest}[1]{\gdef\@crest{#1}}
 \newcommand*{\@crest}{}
 \newcommand*{\course}[1]{\gdef\@course{#1}}
 \newcommand*{\@course}{Course Title}
 \newcommand*{\university}[1]{\gdef\@university{#1}}
 \newcommand*{\@university}{University Name}
+
+\newcommand{\abstracttext}[1]{\gdef\@abstract{#1}}
+\newcommand{\@abstract}{Abstract}
+\newcommand*{\keywords}[1]{\gdef\@keywords{#1}}
+\newcommand*{\@keywords}{Keywords}
