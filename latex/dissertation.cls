@@ -103,10 +103,12 @@
 \RequirePackage{libertinust1math}
 
 % change default monospace font, and listings style
-\RequirePackage[scaled]{beramono}
-\RequirePackage[T1]{fontenc}
+\RequirePackage{fontspec}
+\setmonofont{Fira Code}
 \RequirePackage{listings}
-\lstset{basicstyle=\small\ttfamily,breaklines=true,aboveskip=0pt,belowskip=0pt}
+\RequirePackage{jslistings}
+\RequirePackage{lstfiracode}
+\lstset{style=FiraCodeStyle,basicstyle=\small\ttfamily,breaklines=true,aboveskip=0pt,belowskip=0pt,frame=single}
 
 \RequirePackage{graphicx}
 \graphicspath{{./img/}}
