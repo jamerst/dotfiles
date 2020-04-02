@@ -104,11 +104,19 @@
 
 % change default monospace font, and listings style
 \RequirePackage{fontspec}
-\setmonofont{Fira Code}
+\setmonofont[Scale=MatchLowercase]{Fira Code}
 \RequirePackage{listings}
+\RequirePackage{cshlistings}
 \RequirePackage{jslistings}
 \RequirePackage{lstfiracode}
-\lstset{style=FiraCodeStyle,basicstyle=\small\ttfamily,breaklines=true,aboveskip=0pt,belowskip=0pt,frame=single}
+\lstset{
+    style=FiraCodeStyle,
+    basicstyle=\small\ttfamily,
+    breaklines=true,
+    aboveskip=\baselineskip,
+    belowskip=0pt,
+    frame=single
+}
 
 \RequirePackage{graphicx}
 \graphicspath{{./img/}}

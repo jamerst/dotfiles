@@ -1,0 +1,44 @@
+\ProvidesPackage{cshlistings}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{mediumgray}{rgb}{0.3, 0.4, 0.4}
+\definecolor{mediumblue}{rgb}{0.0, 0.0, 0.8}
+\definecolor{forestgreen}{rgb}{0.13, 0.55, 0.13}
+\definecolor{darkviolet}{rgb}{0.58, 0.0, 0.83}
+\definecolor{royalblue}{rgb}{0.25, 0.41, 0.88}
+\definecolor{crimson}{rgb}{0.86, 0.8, 0.24}
+
+\lstdefinestyle{csharp} {
+  language=[Sharp]C,
+  breaklines=true,
+  tabsize=2,
+  commentstyle=\color{mediumgray},
+  morecomment=[s][\color{mediumgray}]{/*+}{*/},
+  morecomment=[s][\color{mediumgray}]{/*-}{*/},
+  morekeywords={  abstract, event, new, struct,
+                as, explicit, null, switch,
+                base, extern, object, this,
+                bool, false, operator, throw,
+                break, finally, out, true,
+                byte, fixed, override, try,
+                case, float, params, typeof,
+                catch, for, private, uint,
+                char, foreach, protected, ulong,
+                checked, goto, public, unchecked,
+                class, if, readonly, unsafe,
+                const, implicit, ref, ushort,
+                continue, in, return, using,
+                decimal, int, sbyte, virtual,
+                default, interface, sealed, volatile,
+                delegate, internal, short, void,
+                do, is, sizeof, while,
+                double, lock, stackalloc,
+                else, long, static,
+                enum, namespace, string, var},
+  keywordstyle=\color{mediumblue},
+  showstringspaces=false,
+  stringstyle=\color{forestgreen},
+  identifierstyle=\color{black},
+  extendedchars=true
+}
