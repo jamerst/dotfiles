@@ -23,6 +23,10 @@ alias dcup='docker-compose up'
 alias dcb='docker-compose build'
 function cbash() { docker exec -it $1 bash ${@:2} }
 
+# DNF
+alias dnfup='sudo dnf upgrade'
+alias dnfinst='sudo dnf install'
+
 # FZF
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(subl {})+abort'"

@@ -24,6 +24,7 @@
 \RequirePackage{enumitem}
 \setlist[itemize]{nosep}
 \renewcommand{\labelitemii}{$\circ$} % use hollow bullets for 2nd level itemize
+\setlist[description]{labelindent=.5cm} % indent descriptions
 
 \RequirePackage[hidelinks]{hyperref}
 \urlstyle{same} % make links use normal font
