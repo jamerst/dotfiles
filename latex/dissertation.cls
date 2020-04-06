@@ -100,11 +100,16 @@
 \RequirePackage{float}
 \RequirePackage[section]{placeins} % prevent figures from being placed outside of section
 
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+
+% change default and math fonts
+\RequirePackage{fontspec}
 \RequirePackage{libertine}
-\RequirePackage{libertinust1math}
+\RequirePackage{unicode-math}
+\setmathfont[Scale=MatchUppercase]{Libertinus Math}
 
 % change default monospace font, and listings style
-\RequirePackage{fontspec}
 \setmonofont[Scale=MatchLowercase]{Fira Code}
 \RequirePackage{listings}
 \RequirePackage{cshlistings}
@@ -147,6 +152,8 @@
     \addtocontents{toc}{\let\protect\l@chapter\protect\report@l@chapter\let\protect\l@section\protect\report@l@section}%
     \origendapp%
 }
+
+\RequirePackage[nottoc]{tocbibind} % show bibliography in TOC
 
 \newcommand*{\project}[1]{\gdef\@project{#1}}
 \newcommand*{\@project}{Project Title}
