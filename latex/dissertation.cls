@@ -7,7 +7,8 @@
 \LoadClass{report}
 
 \RequirePackage{geometry}
-\geometry{a4paper, margin=2cm}
+\geometry{a4paper, margin=2.5cm}
+\linespread{1.25}
 
 \RequirePackage[ddmmyyyy]{datetime}
 \RequirePackage[british]{babel}
@@ -30,7 +31,8 @@
 \urlstyle{same} % make links use normal font
 
 \RequirePackage[parfill]{parskip} % use line breaks instead of indents for paragraphs
-\widowpenalties 1 10000 % prevent breaking paragraph over page
+\setlength{\parskip}{0.75\baselineskip plus 2pt}
+% \widowpenalties 1 10000 % prevent breaking paragraph over page
 
 \renewcommand*{\maketitle}{
     \begin{centering}
@@ -45,10 +47,6 @@
         \vspace{1.5cm}
         \parbox{12.5cm}{
             \centering\normalsize
-            \begin{abstract}
-                \@abstract
-            \end{abstract}\par
-            \vspace{.5cm}
             \textbf{Keywords:} \@keywords
         }\par\vspace{1cm}
         \Large{\@date}\par
@@ -71,10 +69,10 @@
 \titleformat{\chapter}[display]
     {\large\centering}
     {\sffamily\MakeUppercase{\chaptertitlename} \thechapter}
-    {-.75cm}
+    {-1.25cm}
     {
         \rule{.5\textwidth}{.5pt}
-        \bfseries\huge\\
+        \bfseries\huge\\\vspace{-.3cm}
     }
 
 \titleformat{name=\chapter,numberless}[display]
@@ -85,7 +83,7 @@
         \bfseries\huge
     }
     [
-        \vspace{-.5cm}\rule{.5\textwidth}{.5pt}
+        \vspace{-1cm}\rule{.5\textwidth}{.5pt}
     ]
 
 \RequirePackage{tabularx}
@@ -94,7 +92,7 @@
 
 \RequirePackage{color}
 % add command for listing todos - also shows warning if still in file
-\newcommand{\todo}[1]{\textcolor{red}{[ToDo: #1]}\PackageWarning{TODO}{ToDo: #1}}
+\newcommand{\todo}[1]{\textcolor{red}{[ToDo: #1]}\PackageWarning{TODO}{ToDo: #1}\\}
 
 \RequirePackage{calc}
 \RequirePackage{float}
@@ -117,7 +115,7 @@
 \RequirePackage{lstfiracode}
 \lstset{
     style=FiraCodeStyle,
-    basicstyle=\small\ttfamily,
+    basicstyle=\footnotesize\ttfamily\linespread{1},
     breaklines=true,
     aboveskip=\baselineskip,
     belowskip=0pt,
@@ -166,8 +164,5 @@
 \newcommand*{\@course}{Course Title}
 \newcommand*{\university}[1]{\gdef\@university{#1}}
 \newcommand*{\@university}{University Name}
-
-\newcommand{\abstracttext}[1]{\gdef\@abstract{#1}}
-\newcommand{\@abstract}{Abstract}
 \newcommand*{\keywords}[1]{\gdef\@keywords{#1}}
 \newcommand*{\@keywords}{Keywords}
