@@ -8,7 +8,9 @@
 
 \RequirePackage{geometry}
 \geometry{a4paper, margin=2.5cm}
-\linespread{1.25}
+
+\RequirePackage{setspace}
+\onehalfspacing
 
 \RequirePackage[ddmmyyyy]{datetime}
 \RequirePackage[british]{babel}
@@ -23,7 +25,7 @@
 \captionsetup[sub]{font={footnotesize,bf}}
 
 \RequirePackage{enumitem}
-\setlist[itemize]{nosep}
+\setlist{before=\singlespacing}
 \renewcommand{\labelitemii}{$\circ$} % use hollow bullets for 2nd level itemize
 \setlist[description]{labelindent=.5cm} % indent descriptions
 
