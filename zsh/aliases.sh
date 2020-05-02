@@ -3,7 +3,7 @@
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias mkdir='mkdir -pv'
-alias del='trash-put'
+alias del='gio trash'
 alias rm='rm -i'
 
 alias chex='chmod u+x'
