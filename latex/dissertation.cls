@@ -30,7 +30,7 @@
 \setlist[description]{labelindent=.5cm} % indent descriptions
 
 \RequirePackage[hyphens]{url}
-\RequirePackage[hidelinks]{hyperref}
+\RequirePackage[hidelinks,pdfusetitle]{hyperref}
 % \urlstyle{same} % make links use normal font
 
 \RequirePackage[parfill]{parskip} % use line breaks instead of indents for paragraphs
@@ -40,11 +40,11 @@
 \renewcommand*{\maketitle}{
     \begin{centering}
         \singlespacing
-        \Huge{\textbf{\@project}}\par
+        \Huge{\textbf{\@title}}\par
         \vspace{1cm}
         \includegraphics[width=4cm]{\@crest}\par
         \vspace{1cm}
-        \huge{\textbf{\@author}}\par
+        \LARGE{\textbf{\@author}}\par
         \large\textit{\@course\\\@university}\par
         \vspace{1cm}
         \Large{Supervised by \@supervisor}\par
@@ -92,7 +92,7 @@
     ]
 
 \RequirePackage{tabularx}
-\renewcommand{\arraystretch}{1.5} % add padding to tables
+% \renewcommand{\arraystretch}{1.5} % add padding to tables
 \newcommand{\thline}[0]{\noalign{\hrule height 1pt}} % add command for thick hline
 
 \RequirePackage{color}
@@ -158,11 +158,8 @@
 
 \RequirePackage[nottoc]{tocbibind} % show bibliography in TOC
 
-\newcommand*{\project}[1]{\gdef\@project{#1}}
-\newcommand*{\@project}{Project Title}
 \newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}
 \newcommand*{\@supervisor}{Supervisor Name}
-
 \newcommand*{\crest}[1]{\gdef\@crest{#1}}
 \newcommand*{\@crest}{}
 \newcommand*{\course}[1]{\gdef\@course{#1}}
