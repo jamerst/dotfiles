@@ -12,8 +12,8 @@
 \RequirePackage{setspace}
 \onehalfspacing
 
-\RequirePackage[ddmmyyyy]{datetime}
-\RequirePackage[british]{babel}
+\RequirePackage[UKenglish]{babel}
+\RequirePackage[UKenglish, nodayofweek]{datetime}
 \RequirePackage{csquotes}
 \RequirePackage[bottom]{footmisc} % force footnotes to bottom
 
@@ -29,8 +29,9 @@
 \renewcommand{\labelitemii}{$\circ$} % use hollow bullets for 2nd level itemize
 \setlist[description]{labelindent=.5cm} % indent descriptions
 
+\RequirePackage[hyphens]{url}
 \RequirePackage[hidelinks]{hyperref}
-\urlstyle{same} % make links use normal font
+% \urlstyle{same} % make links use normal font
 
 \RequirePackage[parfill]{parskip} % use line breaks instead of indents for paragraphs
 \setlength{\parskip}{0.75\baselineskip plus 2pt}
@@ -38,6 +39,7 @@
 
 \renewcommand*{\maketitle}{
     \begin{centering}
+        \singlespacing
         \Huge{\textbf{\@project}}\par
         \vspace{1cm}
         \includegraphics[width=4cm]{\@crest}\par
@@ -51,18 +53,19 @@
             \centering\normalsize
             \textbf{Keywords:} \@keywords
         }\par\vspace{1cm}
-        \Large{\@date}\par
+        \Large{\today}\par
     \end{centering}
 }
 
 \newcommand*{\maketitlepage}{
-    \thispagestyle{empty}\null\mbox{}\vfill
+    \thispagestyle{empty}\vspace*{\fill}
     \maketitle
-    \vfill\null\newpage\thispagestyle{plain}\setcounter{page}{1}
+    \vspace*{\fill}\newpage\thispagestyle{plain}\setcounter{page}{1}
 }
 
 \RequirePackage[nobottomtitles*]{titlesec}
 % set spacing after section headings
+\titlespacing{\chapter}{0pt}{0pt}{1.5cm}
 \titlespacing{\section}{0pt}{.75cm}{.1cm}
 \titlespacing{\subsection}{0pt}{.5cm}{.1cm}
 \titlespacing{\subsubsection}{0pt}{.25cm}{.1cm}
@@ -85,7 +88,7 @@
         \bfseries\huge
     }
     [
-        \vspace{-1cm}\rule{.5\textwidth}{.5pt}
+        \vspace{-1.25cm}\rule{.5\textwidth}{.5pt}
     ]
 
 \RequirePackage{tabularx}
