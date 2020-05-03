@@ -29,7 +29,7 @@
 \renewcommand{\labelitemii}{$\circ$} % use hollow bullets for 2nd level itemize
 \setlist[description]{labelindent=.5cm} % indent descriptions
 
-\RequirePackage[hyphens]{url}
+\RequirePackage[hyphens]{xurl}
 \RequirePackage[hidelinks,pdfusetitle]{hyperref}
 % \urlstyle{same} % make links use normal font
 
