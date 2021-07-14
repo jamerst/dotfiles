@@ -1,0 +1,8 @@
+@import '/usr/share/themes/Mint-Y-Dark-Aqua/cinnamon/cinnamon.css';
+
+/* Fix tooltip light theme */
+#Tooltip {
+  background-color: #2e2e2e;
+  border-color: #202020;
+  color: #fff;
+}

@@ -1,0 +1,26 @@
+[/]
+list=['ea0d326d-9a49-4448-b15e-21f3f3d3ce95']
+
+[:ea0d326d-9a49-4448-b15e-21f3f3d3ce95]
+background-color='rgb(30,33,39)'
+bold-color='#ABB2BF'
+bold-color-same-as-fg=true
+bold-is-bright=false
+cursor-background-color='rgb(92,99,112)'
+cursor-blink-mode='system'
+cursor-colors-set=true
+cursor-foreground-color='rgb(30,33,39)'
+cursor-shape='block'
+default-size-columns=126
+default-size-rows=32
+font='Fira Code Medium 10'
+foreground-color='#abb2bf'
+highlight-background-color='rgb(58,63,75)'
+highlight-colors-set=true
+highlight-foreground-color='rgb(171,178,191)'
+palette=['rgb(30,33,39)', 'rgb(190,80,70)', 'rgb(152,195,121)', 'rgb(209,154,102)', 'rgb(97,175,239)', 'rgb(198,120,221)', 'rgb(86,182,194)', 'rgb(171,178,191)', 'rgb(92,99,112)', 'rgb(224,108,117)', 'rgb(152,195,121)', 'rgb(229,192,123)', 'rgb(97,175,239)', 'rgb(198,120,221)', 'rgb(86,182,194)', 'rgb(255,255,255)']
+use-system-font=false
+use-theme-background=false
+use-theme-colors=false
+use-theme-transparency=false
+visible-name='One Dark'

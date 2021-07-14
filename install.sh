@@ -30,7 +30,7 @@ function mklnk {
 }
 
 # get the current working directory
-wd="$(pwd)"
+wd="$(dirname "$(readlink -f $0)")"
 
 # CKB-NEXT
 echo $'\nConfiguring ckb-next'
@@ -39,7 +39,7 @@ mklnk $wd/ckb-next/ckb-next.conf $HOME/.config/ckb-next/ckb-next.conf
 # CONKY
 echo $'\nConfiguring conky'
 # extract archive - need to use an archive to preserve git repos inside
-tar -xf conky/conky-modern.tar.gz -C conky
+tar -xf $wd/conky/conky-modern.tar.gz -C $wd/conky
 # only create if extracted successfully
 if [ $? -eq 0 ]; then
     echo "Conky archive successfully extracted"
@@ -58,9 +58,14 @@ echo $'\nConfiguring Firefox UserChrome'
 profile="$(cd $HOME/.mozilla/firefox/*.default*; pwd)" # find default profile directory
 mklnk $wd/firefox/chrome/ $profile/
 
-# KITTY
-echo $'\nConfiguring kitty'
-mklnk $wd/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
+# GNOME-TERMINAL
+echo $'\nConfiguring gnome-terminal'
+cat $wd/gnome-terminal/one-dark | dconf load /org/gnome/terminal/legacy/profiles:/
+if [ $? -eq 0 ]; then
+    echo "gnome-terminal settings successfully loaded"
+else
+    echo "Failed to load gnome-terminal settings"
+fi
 
 # LATEX
 echo $'\nConfiguring LaTeX'
@@ -81,13 +86,13 @@ echo $'\nConfiguring redshift'
 mklnk $wd/redshift/redshift.conf $HOME/.config/redshift.conf
 mklnk $wd/redshift/hooks $HOME/.config/redshift/
 
+# THEMES
+echo $'\n Configuring Themes'
+mklnk $wd/themes/Mint-Y-Dark-Aqua $HOME/.themes/
+
 # ULAUNCHER
 echo $'\nConfiguring Ulauncher'
 mklnk $wd/ulauncher $HOME/.config/
-
-# XSESSION
-echo $'\nConfiguring xsession'
-mklnk $wd/xsession/xsessionrc $HOME/.xsessionrc
 
 # ZSH
 echo $'\nConfiguring ZSH'

@@ -8,9 +8,9 @@
 # See HOOKS section under man page of redshift for more information about redshift hooks
 
 # path to wallpaper for each time
-daytime='/home/james/Pictures/backgrounds/lis ep2 menu.png'
-transition='/home/james/Pictures/backgrounds/lis ep4 menu.png'
-night='/home/james/Pictures/backgrounds/lis ep3 menu.png'
+daytime='/home/james/Pictures/Wallpapers/Firewatch/day.png'
+transition='/home/james/Pictures/Wallpapers/Firewatch/transition.png'
+night='/home/james/Pictures/Wallpapers/Firewatch/night.png'
 
 
 deref() {
@@ -19,7 +19,7 @@ deref() {
 }
 
 
-if [ "$1" = "period-changed" ]; then
+if [ "$1" = "period-changed" ] && [ "$3" != "none" ]; then
   # if hook is for period changing
   gsettings set org.cinnamon.desktop.background picture-uri "file://$(deref "$3")"
 fi

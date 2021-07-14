@@ -8,8 +8,8 @@
 # See HOOKS section under man page of redshift for more information about redshift hooks
 
 # brightness values for each period (transition is brightness inbetween, not transition time)
-night=0
-transition=5
+night=10
+transition=10
 daytime=50
 
 
@@ -23,6 +23,11 @@ fade_to() {
   [ "$current" -gt "$1" ] && step=-1 || step=1
   # set dim direction based on current brightness being greater or less than target
   for i in $(seq "$current" "$step" "$1"); do
+    if [ -f /tmp/redshift-brightness-halt ]; then
+      rm /tmp/redshift-brightness-halt
+      break
+    fi
+
     # step brightness down 1 level at a time
     ddcutil set 10 $i -d 1
     ddcutil set 10 $i -d 2
@@ -31,12 +36,14 @@ fade_to() {
 }
 
 
-# if hook is for period changing
-if [ "$1" = "period-changed" ]; then
+# if hook is for period changing and not already running
+if [ "$1" = "period-changed" ] && [ ! -f /tmp/redshift-brightness-lock ]; then
+  touch /tmp/redshift-brightness-lock
   # if changing at startup, i.e. not fading between states
   if [ "$2" = "none" ]; then
     fade_to "$(deref "$3")" 0.1
   else
     fade_to "$(deref "$3")" 60
   fi
+  rm /tmp/redshift-brightness-lock
 fi
