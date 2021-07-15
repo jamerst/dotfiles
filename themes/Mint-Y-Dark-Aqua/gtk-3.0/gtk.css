@@ -1,0 +1,13 @@
+@import '/usr/share/themes/Mint-Y-Dark-Aqua/gtk-3.0/gtk.css';
+
+/* Fix tooltip light theme */
+tooltip,
+.tooltip {
+  color: #fff;
+  border-color: #202020; }
+  tooltip.background,
+  .tooltip.background {
+    background-color: #2e2e2e; }
+  tooltip *,
+  .tooltip * {
+    color: #fff; }
