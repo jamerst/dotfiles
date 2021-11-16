@@ -14,3 +14,4 @@ robbyrussell/oh-my-zsh path:lib/termsupport.zsh
 # OTHER PLUGINS
 zdharma/fast-syntax-highlighting
 zsh-users/zsh-autosuggestions
+Aloxaf/fzf-tab
