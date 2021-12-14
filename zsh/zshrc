@@ -32,3 +32,5 @@ bindkey "^[[3~" delete-char
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
+# disable .net cli telemetry
+export DOTNET_CLI_TELEMETRY_OPTOUT=1

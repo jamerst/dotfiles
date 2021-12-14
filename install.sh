@@ -55,8 +55,19 @@ mklnk $wd/csscomb/csscomb.json $HOME/.csscomb.json
 
 # FIREFOX
 echo $'\nConfiguring Firefox UserChrome'
-profile="$(cd $HOME/.mozilla/firefox/*.default*; pwd)" # find default profile directory
-mklnk $wd/firefox/chrome/ $profile/
+if [ `find $HOME/.mozilla/firefox -type d -name "*.default*" | wc -l` -gt 1 ] && [ ! -z `grep "Default=1" $HOME/.mozilla/firefox/profiles.ini` ] ; then
+    profile=`grep -B 1 "Default=1" $HOME/.mozilla/firefox/profiles.ini | head -n 1 | cut -c6-` # find default profile directory if there is more than one with "default" in the name
+    echo "profile=$profile"
+else
+    profile=$(basename `find $HOME/.mozilla/firefox -type d -name "*.default*" | head -n 1`)
+    echo "profile=$profile"
+fi
+
+if [[ -z "$profile" ]]; then
+    echo "Failed to find Firefox profile directory"
+else
+    mklnk $wd/firefox/chrome/ "$HOME/.mozilla/firefox/$profile/"
+fi
 
 # GNOME-TERMINAL
 echo $'\nConfiguring gnome-terminal'
