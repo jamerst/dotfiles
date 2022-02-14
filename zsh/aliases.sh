@@ -46,6 +46,9 @@ function lc() { cd "$1" && l }
 # NCDU
 alias ncdu='ncdu --color dark'
 
+# NPM/PNPM
+alias pnpm-check='NPM_CHECK_INSTALLER=pnpm npm-check -u'
+
 # SSH
 alias sshw='ssh u1708480@cobra-02.dcs.warwick.ac.uk'
 function scpw() { scp u1708480@cobra-02.dcs.warwick.ac.uk $@ }
