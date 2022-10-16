@@ -32,10 +32,6 @@ function mklnk {
 # get the current working directory
 wd="$(dirname "$(readlink -f $0)")"
 
-# CKB-NEXT
-echo $'\nConfiguring ckb-next'
-mklnk $wd/ckb-next/ckb-next.conf $HOME/.config/ckb-next/ckb-next.conf
-
 # CONKY
 echo $'\nConfiguring conky'
 # extract archive - need to use an archive to preserve git repos inside
@@ -101,19 +97,19 @@ mklnk $wd/redshift/hooks $HOME/.config/redshift/
 echo $'\n Configuring Themes'
 mklnk $wd/themes/Mint-Y-Dark-Aqua $HOME/.themes/
 
-# ULAUNCHER
-echo $'\nConfiguring Ulauncher'
-mklnk $wd/ulauncher $HOME/.config/
-
 # ZSH
 echo $'\nConfiguring ZSH'
 mklnk $wd/zsh/zshrc $HOME/.zshrc
 
+git clone --depth=1 https://github.com/mattmc3/antidote.git $wd/zsh/antidote
+chmod u+x $wd/zsh/antidote/antidote.zsh
+
 # set directory for scripts directly to path - no need for symlink
 sed -i "s|dotfilesZsh=.*|dotfilesZsh=$wd/zsh|" $wd/zsh/zshrc
-
 if [ $? -eq 0 ]; then
     echo "ZSH path variable successfully set"
 else
     echo "Failed to set ZSH path variable"
 fi
+
+mklnk $wd/zsh/spaceshiprc.zsh $HOME/.spaceshiprc.zsh

@@ -1,7 +1,5 @@
-# enter plugins to load in here
-
 # THEMES
-denysdovhan/spaceship-prompt
+spaceship-prompt/spaceship-prompt
 
 # OH-MY-ZSH PLUGINS
 robbyrussell/oh-my-zsh path:plugins/colored-man-pages
