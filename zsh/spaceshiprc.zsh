@@ -1,4 +1,5 @@
 SPACESHIP_PROMPT_ADD_NEWLINE="false" # disable newline before prompt
+SPACESHIP_EXEC_TIME_PRECISION="0" # remove decimals in execution time
 
 # SPACESHIP_ASYNC_SHOW_COUNT=true
 
