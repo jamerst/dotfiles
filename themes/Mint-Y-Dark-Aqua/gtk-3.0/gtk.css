@@ -1,5 +1,10 @@
 @import '/usr/share/themes/Mint-Y-Dark-Aqua/gtk-3.0/gtk.css';
 
+/*
+  Custom tweaks to Mint-Y theme
+  Restart Cinnamon with Ctrl+Alt+Esc to get changes to apply properly
+*/
+
 /* Fix tooltip light theme */
 tooltip,
 .tooltip {
@@ -11,3 +16,27 @@ tooltip,
   tooltip *,
   .tooltip * {
     color: #fff; }
+
+/* Reduce window border radius back to 1.x.x value */
+.background .titlebar:backdrop, .background .titlebar {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px; }
+
+window.csd.unified:not(.solid-csd):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right):not(.maximized),
+window.csd.unified:not(.solid-csd):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right):not(.maximized) > decoration,
+window.csd.unified:not(.solid-csd):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right):not(.maximized) > decoration-overlay {
+  border-radius: 3px; }
+
+hdyleaflet:last-child headerbar {
+  border-top-right-radius: 3px; }
+
+hdyleaflet:first-child headerbar {
+  border-top-left-radius: 3px; }
+
+/* Also remove black border around window */
+decoration {
+  border-radius: 3px 3px 0 0; }
+  .ssd decoration {
+    box-shadow: none; }
+  .ssd decoration:backdrop {
+    box-shadow: none; }

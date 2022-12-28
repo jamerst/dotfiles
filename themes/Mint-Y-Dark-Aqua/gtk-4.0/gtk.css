@@ -1,0 +1,16 @@
+@import '/usr/share/themes/Mint-Y-Dark-Aqua/gtk-4.0/gtk.css';
+
+window.dialog.message .titlebar {
+    border-radius: 4px 4px 0 0;
+}
+
+window.csd {
+    border-radius: 4px 4px 0 0; }
+    window.csd.popup {
+      border-radius: 4px 4px 0 0; }
+    window.csd.dialog.message {
+      border-radius: 4px 4px 0 0; }
+    window.ssd {
+      box-shadow: 0 0 0 1px transparent; }
+    window.ssd:backdrop {
+      box-shadow: 0 0 0 1px transparent; }
