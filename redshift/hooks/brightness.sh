@@ -1,5 +1,5 @@
 #!/bin/bash
-
+exit 0
 # Set brightness for DDC/CI enabled monitors using brightnessd
 
 # Place in ~/.config/redshift/hooks
