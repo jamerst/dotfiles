@@ -35,10 +35,10 @@ function gclj() { git clone git@github.com:jamerst/$1.git ${@:2} }
 function gclgh() { git clone git@github.com:$1.git ${@:2} }
 
 # LS
-alias l='exa -l --group-directories-first --time-style long-iso'
-alias lg='exa -lg --group-directories-first --time-style long-iso'
-alias la='exa -la --group-directories-first --time-style long-iso'
-alias lga='exa -lga --group-directories-first --time-style long-iso'
+alias l='eza -l --group-directories-first --time-style long-iso'
+alias lg='eza -lg --group-directories-first --time-style long-iso'
+alias la='eza -la --group-directories-first --time-style long-iso'
+alias lga='eza -lga --group-directories-first --time-style long-iso'
 function lc() { cd "$1" && l }
 
 # NCDU
