@@ -14,9 +14,9 @@ alias ch755='chmod 755'
 alias sudo='sudo ' # Enable aliases to be sudo'ed
 
 # DOCKER
-alias dcup='docker-compose up'
-alias dcs='docker-compose stop'
-alias dcb='docker-compose build'
+alias dcup='docker compose up'
+alias dcs='docker compose stop'
+alias dcb='docker compose build'
 function cbash() { docker exec -it $1 bash ${@:2} }
 
 # DNF
