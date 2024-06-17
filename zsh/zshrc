@@ -5,7 +5,11 @@ compinit -i
 # dotfiles zsh directory, to be set by install script
 dotfilesZsh=/home/james/src/dotfiles/zsh
 
-source $dotfilesZsh/zsh_plugins.sh
+source $dotfilesZsh/antidote/antidote.zsh
+
+zstyle ':antidote:bundle' file $dotfilesZsh/zsh_plugins.txt
+antidote load
+
 source $dotfilesZsh/aliases.sh
 
 # enable command history saving
@@ -32,7 +36,11 @@ bindkey "^[[F" end-of-line
 
 # disable .net cli telemetry
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
 # pnpm
 export PNPM_HOME="/home/james/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 # pnpm end

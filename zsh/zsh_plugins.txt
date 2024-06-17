@@ -7,6 +7,7 @@ robbyrussell/oh-my-zsh path:lib/git.zsh
 robbyrussell/oh-my-zsh path:plugins/git
 robbyrussell/oh-my-zsh path:plugins/z
 # use terminal title from oh-my-zsh
+robbyrussell/oh-my-zsh path:lib/functions.zsh
 robbyrussell/oh-my-zsh path:lib/termsupport.zsh
 
 # OTHER PLUGINS
